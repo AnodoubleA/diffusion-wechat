@@ -1,0 +1,11 @@
+/* pages/settings/key/key.wxss */
+@import "../settings.wxss";
+
+picker .main {
+    height: 40px;
+}
+
+picker .value{
+    min-width: 160px;
+    align-self: flex-end;
+}

@@ -1,0 +1,14 @@
+<!--pages/components/modal.wxml-->
+<view class='shade' hidden='{{!show}}' style='z-index:{{zIndex}}'></view>
+<view id='modal-root' class='root v-box' hidden='{{!show}}' style='z-index:{{zIndex+1}};top:{{top}}'>
+    <view class='title h-box-cc'>
+        <text>{{title}}</text>
+    </view>
+    <view class='content full v-box auto-scroll-y'>
+        <text wx:for='{{content}}' style='color:{{item.color.text}};background-color:{{item.color.bg}}'>{{item.text}}</text>
+    </view>
+    <view class='h-box buttons'>
+        <button class='cancel' bindtap='onCancel'>{{cancelText}}</button>
+        <button bindtap='onConfirm' hidden='{{!showConfirm}}' type='{{confirmType}}'>{{confirmText}}</button>
+    </view>
+</view>

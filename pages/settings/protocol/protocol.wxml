@@ -1,0 +1,4 @@
+<!--pages/settings/protocol/protocol.wxml-->
+<view class='root'>
+    <include src='../../templates/protocol.wxml'/>
+</view>

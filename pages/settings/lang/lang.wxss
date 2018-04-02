@@ -1,0 +1,3 @@
+/* pages/settings/lang/lang.wxss */
+
+@import "../settings.wxss"

@@ -1,0 +1,28 @@
+<view class='root'>
+    <view class='message-container'>
+        <view class='message' wx:for="{{messages}}" data-where='{{item.where}}'>
+            <view class='header'>
+                <text class='fa fa-{{icons[item.type]?icons[item.type]:"envelope"}}'></text>
+            </view>
+            <view class='detail'>
+                <text class='time'>{{item.time}}</text>
+                <text class='content'>{{item.content}}</text>
+            </view>
+        </view>
+    </view>
+    <view class='editor form'>
+        <form bindsubmit='onSubmit'>
+            <view class='main'>
+                <textarea name='input' placeholder='input any message'></textarea>
+                <view class='buttons'>
+                    <button class='icon-button'>
+                        <text class='fa fa-close'></text>
+                    </button>
+                    <button class='icon-button' form-type='submit'>
+                        <text class='fa fa-send'></text>
+                    </button>
+                </view>
+            </view>
+        </form>
+    </view>
+</view>

@@ -1,0 +1,12 @@
+.buttons {
+}
+
+.buttons button {
+    flex: 1;
+    border-radius: 0;
+}
+
+.reject {
+    background-color: red;
+    color: #fff;
+}

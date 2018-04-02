@@ -1,0 +1,37 @@
+<!--pages/settings/settings.wxml-->
+<view class='root' bindtouchstart='onTouchEvent' bindtouchmove='onTouchEvent'>
+    <view class='setting group' hidden='true'>
+        <view class='setting item'>
+            <text class='name'>加密算法</text>
+        </view>
+    </view>
+
+    <view class='setting group'>
+        <view class='setting item'>
+            <text class='name'>分组长度</text>
+            <view class='icon-info fa fa-info-circle' catchtap='showHelp' data-key='cipher.group'></view>
+            <input class='value' type='number' value='{{group}}' bindblur='onKeySizeBlur'></input>
+        </view>
+    </view>
+
+    <view class='setting group' hidden='true'>
+        <view class='setting item'>
+            <text class='name'>加密周期</text>
+            <view class='icon-info fa fa-info-circle' catchtap='showHelp' data-key='cipher.cycle'></view>
+            <input class='value' type='number' value='{{cycle}}' bindblur='onCycleBlur' disabled></input>
+        </view>
+    </view>
+
+    <view class='setting group'>
+        <view class='setting item'>
+            <picker class='full-x' range='{{levels}}' range-key='label' value='{{level}}' bindchange='onLevelChange'>
+                <view class='main h-box-c'>
+                    <text class='name'>密匙级别</text>
+                    <view class='icon-info fa fa-info-circle' catchtap='showHelp' data-key='cipher.level'></view>
+                    <text class="value h-box-c east">{{levels[level].label}}</text>
+                </view>
+            </picker>
+        </view>
+    </view>
+
+</view>

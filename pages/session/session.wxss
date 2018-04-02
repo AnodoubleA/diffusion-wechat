@@ -1,0 +1,77 @@
+/* pages/session/session.wxss */
+
+.root {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+.message-container{
+    flex:1;
+    overflow-y: auto;
+    background-color: #D5D3D8;
+}
+
+.message{
+    display: flex;
+    background-color: white;
+    max-width: 85%;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.message .icon{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.message .detail{
+    display: flex;
+    flex-direction: column;
+     align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.message .time{
+    font-size: 0.8em;
+    margin-left: auto;
+}
+
+.message[data-where=from]{
+    margin-right: auto;
+}
+
+.message[data-where=to]{
+    margin-left: auto;
+    background-color: #11CEAD;
+}
+
+
+.editor{
+    display: flex;
+    border:1px solid red;
+    background-color: white;
+    border-radius: 5px 5px 0 0;
+}
+
+.editor .main{
+    flex-direction: row;
+}
+
+.editor textarea{
+    flex:1;
+    padding: 2px;
+}
+
+.editor .buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.editor .buttons button:not(:first-child){
+    margin-top: 20px;
+}

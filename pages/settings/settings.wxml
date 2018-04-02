@@ -1,0 +1,52 @@
+<!--pages/settings/settings.wxml-->
+<view class='root' bindtouchstart='onTouchEvent' bindtouchmove='onTouchEvent'>
+    <view class='setting group'>
+        <view class='setting item'>
+            <text class='name'>密码过期时间（分钟）</text>
+            <view class='icon-info fa fa-info-circle' catchtap='showHelp' data-key='key.timeover'></view>
+            <input class='value' type='number' value='{{timeover}}' bindblur='onTimeoverBlur'></input>
+        </view>
+    </view>
+
+    <view class='setting group'>
+        <view class='setting item' hover-class='item-active' catchtap='gopage' data-url="/pages/settings/key/key">
+            <text class='name'>默认加密设置</text>
+            <view class='fa fa-chevron-right icon'></view>
+        </view>
+    </view>
+
+    <view class='setting group' hidden='true'>
+        <view class='setting item not' hover-class='item-active' catchtap='gopage' data-url="/pages/settings/lang/lang">
+            <text class='name'>Language</text>
+            <view class='fa fa-chevron-right icon'></view>
+        </view>
+    </view>
+
+    <view class='setting group'>
+        <view class='setting item not' hover-class='item-active' catchtap='gopage' data-url="/pages/settings/protocol/protocol">
+            <text class='name'>软件使用协议</text>
+            <view class='fa fa-chevron-right icon'></view>
+        </view>
+    </view>
+
+    <view class='setting group'>
+        <view class='setting item not' hover-class='item-active' catchtap='gopage' data-url="/pages/settings/law/law">
+            <text class='name'>法律声明</text>
+            <view class='fa fa-chevron-right icon'></view>
+        </view>
+    </view>
+
+      <view class='setting group'>
+        <view class='setting item not' hover-class='item-active' catchtap='gopage' data-url="/pages/settings/help/help">
+            <text class='name'>帮助</text>
+            <view class='fa fa-chevron-right icon'></view>
+        </view>
+    </view>
+
+    <view class='setting group'>
+        <view class='setting item not' hover-class='item-active' catchtap='gopage' data-url="/pages/settings/about/about">
+            <text class='name'>关于</text>
+            <view class='fa fa-chevron-right icon'></view>
+        </view>
+    </view>
+</view>

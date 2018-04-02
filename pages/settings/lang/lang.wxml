@@ -1,0 +1,14 @@
+<view class='root' bindtouchstart='onTouchEvent' bindtouchmove='onTouchEvent'>
+    <view class='setting group'>
+        <view class='setting item' hover-class='item-active' catchtap='onLangChange' data-lang='zh_CN'>
+            <text class='name'>中文</text>
+        </view>
+    </view>
+
+    <view class='setting group'>
+        <view class='setting item' hover-class='item-active' catchtap='onLangChange' data-lang='en_US'>
+            <text class='name'>English</text>
+        </view>
+    </view>
+
+</view>

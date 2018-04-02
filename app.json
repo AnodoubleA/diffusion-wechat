@@ -1,0 +1,35 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/cipher/cipher",
+        "pages/settings/settings",
+        "pages/settings/key/key",
+        "pages/settings/about/about",
+        "pages/settings/lang/lang",
+        "pages/settings/help/help",
+        "pages/settings/law/law",
+        "pages/settings/protocol/protocol"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#00b050",
+        "navigationBarTextStyle": "#fff"
+    },
+    "tabBar": {
+        "selectedColor": "#00b050",
+        "list": [
+            {
+                "pagePath": "pages/cipher/cipher",
+                "text": "加密/解密",
+                "iconPath": "assets/images/cipher.png",
+                "selectedIconPath": "assets/images/cipher.selected.png"
+            },
+            {
+                "pagePath": "pages/settings/settings",
+                "text": "设置",
+                "iconPath": "assets/images/settings.png",
+                "selectedIconPath": "assets/images/settings.selected.png"
+            }
+        ]
+    }
+}

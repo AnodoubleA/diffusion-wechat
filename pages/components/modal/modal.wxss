@@ -1,0 +1,42 @@
+/* pages/components/modal.wxss */
+@import '/css/layout.wxss';
+
+.shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.root {
+    position: absolute;
+    left: calc(50vw - 90vw / 2);
+    width: 90vw;
+    height: auto;
+    box-shadow: 0 0 5px 1px #f0f0f0;
+    background: white;
+}
+
+.title {
+    height: 50px;
+    background-color: #f0f0f0;
+}
+
+.content {
+    margin: 10px;
+}
+
+.content text:not(:first-child) {
+    margin-top: 10px;
+}
+
+.buttons {
+    background-color: #f0f0f0;
+}
+
+.buttons button {
+    flex: 1;
+    border-radius: 0;
+}

@@ -1,0 +1,4 @@
+<!--pages/settings/law/law.wxml-->
+<view class='root'>
+    <include src="../../templates/law.wxml" />
+</view>

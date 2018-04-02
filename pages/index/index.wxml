@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<view class="v-box" hidden='{{!show}}'>
+    <view class='full'>
+        <include src="../templates/protocol.wxml" />
+    </view>
+    <view class='h-box-c buttons'>
+        <button class='reject' catchtap='onReject'>拒绝</button>
+        <button catchtap='onAccept' type='primary'>接受</button>
+    </view>
+</view>

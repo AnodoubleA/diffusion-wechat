@@ -1,0 +1,37 @@
+<!--pages/settings/about/about.wxml-->
+<view class='root'>
+    <view class='text-view'>
+        <view class='section'>
+            扩散加密小程序 V1.0 (By Nodouble)
+        </view>
+
+        <view class='section'>
+            本小程序使用扩散加密算法进行数据的加密及解密，扩散加密作为一种高强度的加密技术，具有强大高、速度快、抗攻击等特点，非常适合现代加密技术的要求。
+        </view>
+        
+        <view class='section'>
+            扩散加密算法支持任何长度分组的数据加密，但本程序将分组长度限定为1024~524288（位）。对于目前的任意计算机（包括量子、光子计算机）来说，2048位的分组足以抵抗其穷举攻击。
+        </view>
+
+        <view class='section'>
+            扩散加密算法具有非常高的灵活性，在总的算法框架下，可以任意定制专属算法细节，因此本算法可以根据未来的需要随时修改其算法实现，保证加密的安全性！
+        </view>
+
+        <view class='section'>
+            您的加密密匙是解开密文的唯一钥匙，若您不慎遗失，作者将无任何办法为您解开密文。同时，请您谨慎保管好自己的密匙，切勿轻易告诉他人，或轻易让他人获知！
+        </view>
+
+        <view class='section'>
+            我们以用户数据安全为最高目标，因此本软件不会在本地存储任何用户的密码、明文、密文等信息，不会向任何网络发送这些信息，也不会记录用户的任何输入数据，以及统计这些数据。
+        </view>
+
+        <view class='section'>
+            若您有任何问题，请联系作者：QQ<text selectable='true'>1976635360</text>。
+        </view>
+
+        <view class='section'>
+            关于扩散加密的更多资料，请访问：
+            <text selectable='true'>https://baike.baidu.com/item/%E6%89%A9%E6%95%A3%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/20189852</text>
+        </view>
+    </view>
+</view>

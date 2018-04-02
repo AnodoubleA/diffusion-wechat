@@ -1,0 +1,100 @@
+@import "/css/layout.wxss";
+@import "/css/common.wxss";
+@import "/css/icon.wxss";
+
+.root {
+    width: 95vw;
+    height: 90vh;
+    position: absolute;
+    top: calc(50vh - 95vh / 2);
+    left: calc(50vw - 95vw / 2);
+    box-shadow: 0 0 5px 2px rgba(204, 204, 204, 0.6);
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 0;
+}
+
+.shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+form {
+    width: 100%;
+    height: 100%;
+}
+
+.main {
+    height: 99%;
+    width: auto;
+    padding: 2px;
+}
+
+.fields {
+    padding-bottom: 10px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    background-color: white;
+    border-radius: 3px;
+    padding: 2px 0 2px 0;
+}
+
+.row:not(:first-child) {
+    margin-top: 10px;
+}
+
+.field .name {
+    margin-bottom: 5px;
+}
+
+.field .value {
+    border: 1px solid #b3b7c0;
+    border-radius: 3px;
+    height: 28px;
+    color: #666666;
+}
+
+.radio-group {
+    margin-bottom: 5px;
+}
+
+.field.key-box .name {
+    align-self: flex-start;
+}
+
+.field.key-box .icon-button {
+    margin: 10px;
+    width: 15px;
+    height: 15px;
+    background-size: contain;
+}
+
+.txt-buttons {
+    width: 2em;
+}
+
+.buttons button {
+    flex: 1;
+    border-radius: 0;
+}
+
+button.cancel {
+    background-color: red;
+    color: white;
+}
+
+.icon-info {
+    height: 0.9em;
+    width: 0.9em;
+    margin-left: 10px;
+}

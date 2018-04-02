@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "加密/解密",
+    "usingComponents": {
+        "keyeditor": "../components/keyeditor/keyeditor"
+    }
+}
