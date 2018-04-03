@@ -69,7 +69,6 @@ Page({
         }
     },
     onEncipher(event) {
-        if (event.currentTarget.dataset.disabled === 'true') return;
         let key = this.data.key;
         if (key == null || key.data.isEmpty) {
             return showToast("请先设置密码");
@@ -94,7 +93,6 @@ Page({
         doEncipher(self, key);
     },
     onDecipher(event) {
-        if (event.currentTarget.dataset.disabled === 'true') return;
         let key = this.data.key;
         if (key == null || key.data.isEmpty) {
             return showToast("请先设置密码");
