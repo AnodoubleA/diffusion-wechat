@@ -54,6 +54,13 @@ form {
     color: #00a04e;
 }
 
+textarea {
+    flex: 1;
+    width: auto;
+    height: auto;
+    padding: 2px;
+}
+
 .content {
     display: flex;
     border: 1px solid #b3b7c0;
@@ -62,22 +69,22 @@ form {
     color: #666;
 }
 
-.plaintext{
-    margin-top: 5px;
+.content.ciphertext {
+    flex: none;
+}
+.content .output{
+    display: flex;
+    align-items: center;
 }
 
-.plaintext .icon-button{
-    margin: 10px 10px 10px 5px;
-}
-
-.ciphertext .icon-button{
-    margin: 10px 10px 10px 5px;
-}
-
-.content .output {
-    word-break: break-all;
+.ciphertext .icon-button.bom {
+    margin: 5px 10px 5px 0;
 }
 
 .buttons {
     width: 2em;
+}
+
+.icon-button.bom {
+    margin-bottom: 10px;
 }

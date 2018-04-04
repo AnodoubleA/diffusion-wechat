@@ -1,25 +1,23 @@
 <!--pages/cipher/cipher.wxml-->
 <view class='root' bindtouchstart='onTouchEvent' bindtouchmove='onTouchEvent'>
     <view class='main'>
-        <view class='content plaintext'>
-            <textarea value='{{input}}' maxlength='-1' bindblur='onInputBlur' hidden='{{hidden}}' placeholder='请输入消息或者密文'></textarea>
-            <text class='full' hidden='{{!hidden}}'></text>
-            <view class='buttons v-box VC HB'>
-                <view class='icon-button fa fa-close top' catchlongpress='onTxtClean' data-field='input'></view>
-                <view class='icon-button fa fa-paste bom' catchlongpress='onPaste'></view>
-            </view>
+        <view class='h-box-c content plaintext'>
+            <view class='icon-button fa fa-paste' catchtap='onPaste'></view>
+            <input class='full-x' value='{{input}}' maxlength='-1' bindblur='onInputBlur' placeholder='请输入消息或者密文'></input>
+            <view class='icon-button fa fa-close' catchtap='onTxtClean' data-field='input'></view>
         </view>
         <view class='menu'>
             <view class='icon-button fa fa-lock' hover-class='button-hover' catchtap='onEncipher' data-disabled='{{key?"false":"true"}}'></view>
             <view class='icon-button fa fa-key {{key?"key":""}}' hover-class='button-hover' catchtap='onKey' catchlongpress='onClean'></view>
             <view class='icon-button fa fa-unlock' hover-class='button-hover' catchtap='onDecipher' data-disabled='{{key?"false":"true"}}'></view>
         </view>
-        <view class='content plaintext'>
-            <textarea value='{{output}}' maxlength='-1' hidden='{{hidden}}' placeholder='明文或密文将会输出到这里'></textarea>
-            <text class='full' hidden='{{!hidden}}'></text>
-            <view class='buttons v-box VC HB'>
-                <view class='icon-button fa fa-close top' catchlongpress='onTxtClean' data-field='output'></view>
-                <view class='icon-button fa fa-copy bom' catchlongpress='onCopy'></view>
+        <view class='content ciphertext full'>
+            <scroll-view class='full' scroll-y>
+                <view class='output'>{{output||"明文或密文将会输出到这里"}}</view>
+            </scroll-view>
+            <view class='v-box buttons HB'>
+                <view class='icon-button fa fa-close top' catchtap='onTxtClean' data-field='output'></view>
+                <view class='icon-button fa fa-copy bom' catchtap='onCopy'></view>
             </view>
         </view>
     </view>

@@ -128,7 +128,6 @@ function pack(data) {
     }
     let ret = {
         algorithm: data.algorithm,
-        level: LEVEL.VALUES[parseInt(data.level)].value,
         group: parseInt(data.group),
         data: decodeKey(data.key, data.format),
         format: data.format

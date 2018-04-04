@@ -1,6 +1,6 @@
 // pages/cipher/cipher.js
 import { CIPHER_OPTION, ALGORITHMS } from '../../js/module/cipher/consts.js'
-import { CIPHER_LIMIT } from '../../js/config/config.js'
+import { CIPHER_DEFAULT, CIPHER_LIMIT } from '../../js/config/config.js'
 import Config from '../../js/config/config.js';
 import Lookup from '../../js/config/lookup.js';
 import Utils from '../../js/module/utils/utils.js'
@@ -12,12 +12,9 @@ import TextDecipherCommand from '../../js/cmds/TextDecipherCommand.js';
 
 Page({
     data: {
-        hidden: false,
         key: null,
         input: "",
-        inbuf: "",
         output: "",
-        outbuf: ""
     },
     onLoad() {
         this.keyeditor = this.selectComponent("#keyeditor");
@@ -51,6 +48,7 @@ Page({
         wx.getClipboardData({
             success(ret) {
                 self.setData({ input: ret.data });
+                showToast("ok");
             }
         });
     },
@@ -108,22 +106,16 @@ Page({
         }
     },
     onKey(event) {
-        this.data.inbuf = this.data.input;
-        this.data.outbuf = this.data.output;
-        this.setData({ hidden: true, input: null, output: null });
         let self = this;
         this.keyeditor.open(this.data.key, function (button, key) {
-            let data = { hidden: false, input: "...", output: "..." };
-            if (button) data.key = key;
-            self.setData(data);
-            setTimeout(() => {
-                self.setData({ input: self.data.inbuf, output: self.data.outbuf });
-                self.data.inbuf = self.data.outbuf = null;
-            }, 70);
+            if (button) {
+                key.level = Config.get("cipher.level", CIPHER_DEFAULT.LEVEL);
+                self.setData({ key: key });
+            }
         });
     },
     onClean() {
-        this.setData({ key: null, input: "", output: "" });
+        this.setData({ key: null, input: null, output: null });
         this.keyeditor.clear();
     }
 });

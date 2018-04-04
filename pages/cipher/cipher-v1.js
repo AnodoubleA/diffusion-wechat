@@ -69,7 +69,6 @@ Page({
         }
     },
     onEncipher(event) {
-        if (event.currentTarget.dataset.disabled === 'true') return;
         let key = this.data.key;
         if (key == null || key.data.isEmpty) {
             return showToast("请先设置密码");
@@ -77,21 +76,23 @@ Page({
         if (String.isEmpty(this.data.input)) {
             return showToast("请输入消息！");
         }
+        let min = CIPHER_LIMIT.MIN_KEY_LENGTH;
         let self = this;
-        if (key.data.length < CIPHER_LIMIT.MIN_KEY_LENGTH) {
-            wx.showModal({
+        if (key.data.length < min) {
+            let option = {
                 title: '警告',
-                content: "密码太短，最好大于{}！".format(CIPHER_LIMIT.MIN_KEY_LENGTH),
+                content: "密码太短了，最好大于{}！".format(min),
                 confirmText: '忽略警告',
                 confirmColor: '#ff5511',
                 success: function (res) {
                     if (res.confirm) doEncipher(self, key);
                 }
-            })
+            };
+            return wx.showModal(option);
         }
+        doEncipher(self, key);
     },
     onDecipher(event) {
-        if (event.currentTarget.dataset.disabled === 'true') return;
         let key = this.data.key;
         if (key == null || key.data.isEmpty) {
             return showToast("请先设置密码");
@@ -101,9 +102,9 @@ Page({
         }
         try {
             let output = Base64.Decoder.decode3(this.data.input);
-            doDecipher(this, key, base64);
+            doDecipher(this, key, output);
         } catch (error) {
-            showModal("无效密文", error.message, false);
+            showModal("错误", error.message, false);
         }
     },
     onKey(event) {
