@@ -2,6 +2,9 @@
 <view class='root v-box' hidden='{{!show}}'>
     <form bindsubmit='onSubmit' bindreset='onReset'>
         <view class='main v-box'>
+            <view class='title h-box-cc'>
+                <text>加密设置</text>
+            </view>
             <view class='fields v-box full auto-scroll-y'>
                 <view class='field row key-box'>
                     <view class='v-box'>
@@ -17,9 +20,9 @@
                             </label>
                         </radio-group>
                         <view class='value h-box-c full'>
-                            <view class='icon-button paste' catchlongpress='onKeyPaste'></view>
+                            <view class='icon-button paste' catchtap='onKeyPaste'></view>
                             <input class='full-x' name='key' maxlength='-1' value='{{key}}' placeholder='请输入密码'></input>
-                            <view class='icon-button close' catchlongpress='onKeyClean'></view>
+                            <view class='icon-button close' catchtap='onKeyClean'></view>
                         </view>
                     </view>
                 </view>

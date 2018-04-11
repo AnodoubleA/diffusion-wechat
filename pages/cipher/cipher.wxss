@@ -3,18 +3,14 @@
 .root {
     flex: 1;
     padding: 2px;
-}
-
-form {
-    width: 100%;
-    height: 100%;
+    display: flex;
 }
 
 .main {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    width: 100%;
+    flex: 1;
+    padding: 10px 2px;
 }
 
 .menu {
@@ -62,15 +58,11 @@ form {
     color: #666;
 }
 
-.plaintext{
-    margin-top: 5px;
-}
-
-.plaintext .icon-button{
+.plaintext .icon-button {
     margin: 10px 10px 10px 5px;
 }
 
-.ciphertext .icon-button{
+.ciphertext .icon-button {
     margin: 10px 10px 10px 5px;
 }
 

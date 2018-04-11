@@ -4,9 +4,9 @@
 
 .root {
     width: 99vw;
-    height: 240px;
+    height: 260px;
     position: absolute;
-    top: calc(50vh - 240px / 2);
+    top: calc(50vh - 260px / 2);
     left: calc(50vw - 99vw / 2);
     box-shadow: 0 0 5px 2px rgba(204, 204, 204, 0.6);
     background-color: #f1f1f1;
@@ -34,9 +34,14 @@ form {
     padding: 2px;
 }
 
+.title {
+    height: 40px;
+    font-size: 1.2em;
+}
+
 .fields {
-    flex:1;
-    justify-content:center;
+    flex: 1;
+    justify-content: center;
 }
 
 .field {
@@ -48,9 +53,11 @@ form {
     background-color: white;
     border-radius: 3px;
     padding: 2px 0 2px 0;
-    margin-top: 10px;
 }
 
+.row:not(:first-child) {
+    margin-top: 10px;
+}
 
 .field .name {
     margin-bottom: 5px;
@@ -60,7 +67,7 @@ form {
     border: 1px solid #b3b7c0;
     border-radius: 3px;
     height: 40px;
-    color: #666666;
+    color: #666;
     vertical-align: middle;
 }
 
@@ -79,7 +86,7 @@ form {
     background-size: contain;
 }
 
-.key-box .value{
+.key-box .value {
     /* height: 60px; */
 }
 

@@ -15,7 +15,8 @@ Page({
     onReject() {
         wx.showModal({
             title: '温馨提示',
-            content: '由于您拒绝同意本协议，因此您将无法使用本APP的任何服务，若要继续使用，请务必同意本协议！'
+            content: '由于您拒绝同意本协议，因此您将无法使用本APP的任何服务，若要继续使用，请务必同意本协议！',
+            showCancel: false
         })
     },
     onAccept() {

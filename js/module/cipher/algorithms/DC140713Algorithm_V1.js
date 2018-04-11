@@ -1,7 +1,7 @@
 import AbstractAlgorithm from "./AbstractAlgorithm";
 import {ALGORITHMS} from "../consts";
 
-class DC140713Algorithm extends AbstractAlgorithm {
+export default class DC140713Algorithm extends AbstractAlgorithm {
 
 	enc(M, K) {
 		let R = this.R;
@@ -12,29 +12,29 @@ class DC140713Algorithm extends AbstractAlgorithm {
 			let U = K[i - 1];
 			let V = K[--v];
 			for (let y = this.H; y < N;) {
-				M[y] = BOX[(M[y] ^ U[y])] ^ M[x];
-				M[x] = BOX[(M[x] ^ V[x])] ^ M[y];
+				M[y] = BOX[M[y] ^ U[y]] ^ M[x];
+				M[x] = BOX[M[x] ^ V[x]] ^ M[y];
 				x = (++x) & h, y++;
-				M[y] = BOX[(M[y] ^ U[y])] ^ M[x];
-				M[x] = BOX[(M[x] ^ V[x])] ^ M[y];
+				M[y] = BOX[M[y] ^ U[y]] ^ M[x];
+				M[x] = BOX[M[x] ^ V[x]] ^ M[y];
 				x = (++x) & h, y++;
-				M[y] = BOX[(M[y] ^ U[y])] ^ M[x];
-				M[x] = BOX[(M[x] ^ V[x])] ^ M[y];
+				M[y] = BOX[M[y] ^ U[y]] ^ M[x];
+				M[x] = BOX[M[x] ^ V[x]] ^ M[y];
 				x = (++x) & h, y++;
-				M[y] = BOX[(M[y] ^ U[y])] ^ M[x];
-				M[x] = BOX[(M[x] ^ V[x])] ^ M[y];
+				M[y] = BOX[M[y] ^ U[y]] ^ M[x];
+				M[x] = BOX[M[x] ^ V[x]] ^ M[y];
 				x = (++x) & h, y++;
-				M[y] = BOX[(M[y] ^ U[y])] ^ M[x];
-				M[x] = BOX[(M[x] ^ V[x])] ^ M[y];
+				M[y] = BOX[M[y] ^ U[y]] ^ M[x];
+				M[x] = BOX[M[x] ^ V[x]] ^ M[y];
 				x = (++x) & h, y++;
-				M[y] = BOX[(M[y] ^ U[y])] ^ M[x];
-				M[x] = BOX[(M[x] ^ V[x])] ^ M[y];
+				M[y] = BOX[M[y] ^ U[y]] ^ M[x];
+				M[x] = BOX[M[x] ^ V[x]] ^ M[y];
 				x = (++x) & h, y++;
-				M[y] = BOX[(M[y] ^ U[y])] ^ M[x];
-				M[x] = BOX[(M[x] ^ V[x])] ^ M[y];
+				M[y] = BOX[M[y] ^ U[y]] ^ M[x];
+				M[x] = BOX[M[x] ^ V[x]] ^ M[y];
 				x = (++x) & h, y++;
-				M[y] = BOX[(M[y] ^ U[y])] ^ M[x];
-				M[x] = BOX[(M[x] ^ V[x])] ^ M[y];
+				M[y] = BOX[M[y] ^ U[y]] ^ M[x];
+				M[x] = BOX[M[x] ^ V[x]] ^ M[y];
 				x = (++x) & h, y++;
 			}
 			x = X >> i;
@@ -47,32 +47,32 @@ class DC140713Algorithm extends AbstractAlgorithm {
 		let BOX = this.BOX;
 		let x = 0, v = R - 1, h = this.H - 1;
 		for (let i = 0; i < R; i++ , v--) {
-			let U = K[i];
-			let V = K[v];
+			let V = K[i];
+			let U = K[v];
 			for (let y = this.H; y < N;) {
-				C[x] = BOX[(C[x] ^ C[y])] ^ U[x];
-				C[y] = BOX[(C[x] ^ C[y])] ^ V[y];
+				C[x] = BOX[C[x] ^ C[y]] ^ V[x];
+				C[y] = BOX[C[x] ^ C[y]] ^ U[y];
 				x = (++x) & h, y++;
-				C[x] = BOX[(C[x] ^ C[y])] ^ U[x];
-				C[y] = BOX[(C[x] ^ C[y])] ^ V[y];
+				C[x] = BOX[C[x] ^ C[y]] ^ V[x];
+				C[y] = BOX[C[x] ^ C[y]] ^ U[y];
 				x = (++x) & h, y++;
-				C[x] = BOX[(C[x] ^ C[y])] ^ U[x];
-				C[y] = BOX[(C[x] ^ C[y])] ^ V[y];
+				C[x] = BOX[C[x] ^ C[y]] ^ V[x];
+				C[y] = BOX[C[x] ^ C[y]] ^ U[y];
 				x = (++x) & h, y++;
-				C[x] = BOX[(C[x] ^ C[y])] ^ U[x];
-				C[y] = BOX[(C[x] ^ C[y])] ^ V[y];
+				C[x] = BOX[C[x] ^ C[y]] ^ V[x];
+				C[y] = BOX[C[x] ^ C[y]] ^ U[y];
 				x = (++x) & h, y++;
-				C[x] = BOX[(C[x] ^ C[y])] ^ U[x];
-				C[y] = BOX[(C[x] ^ C[y])] ^ V[y];
+				C[x] = BOX[C[x] ^ C[y]] ^ V[x];
+				C[y] = BOX[C[x] ^ C[y]] ^ U[y];
 				x = (++x) & h, y++;
-				C[x] = BOX[(C[x] ^ C[y])] ^ U[x];
-				C[y] = BOX[(C[x] ^ C[y])] ^ V[y];
+				C[x] = BOX[C[x] ^ C[y]] ^ V[x];
+				C[y] = BOX[C[x] ^ C[y]] ^ U[y];
 				x = (++x) & h, y++;
-				C[x] = BOX[(C[x] ^ C[y])] ^ U[x];
-				C[y] = BOX[(C[x] ^ C[y])] ^ V[y];
+				C[x] = BOX[C[x] ^ C[y]] ^ V[x];
+				C[y] = BOX[C[x] ^ C[y]] ^ U[y];
 				x = (++x) & h, y++;
-				C[x] = BOX[(C[x] ^ C[y])] ^ U[x];
-				C[y] = BOX[(C[x] ^ C[y])] ^ V[y];
+				C[x] = BOX[C[x] ^ C[y]] ^ V[x];
+				C[y] = BOX[C[x] ^ C[y]] ^ U[y];
 				x = (++x) & h, y++;
 			}
 			x = (1 << i) & h;
@@ -88,5 +88,3 @@ class DC140713Algorithm extends AbstractAlgorithm {
 	}
 
 }
-
-export default DC140713Algorithm;
