@@ -1,6 +1,6 @@
 import KeyFactory from "../KeyFactory.js";
 
-export default class AbstractKeyFactory extends KeyFactory {
+export default class KeyFactoryProxy extends KeyFactory {
     level;
     constructor(level) {
         super();

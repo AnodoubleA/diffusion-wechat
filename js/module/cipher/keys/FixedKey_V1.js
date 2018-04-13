@@ -1,5 +1,4 @@
 import MixKey from "./MixKey";
-import {Levels} from "./levels";
 
 export default class FixedKey extends MixKey {
 
@@ -9,10 +8,6 @@ export default class FixedKey extends MixKey {
 		this.update_key();
 		this.update_key();
 		this.update_key();
-	}
-
-	get level() {
-		return Levels.LEVEL_1;
 	}
 
 	get version() {

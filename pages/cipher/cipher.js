@@ -48,7 +48,7 @@ Page({
         wx.getClipboardData({
             success(ret) {
                 self.setData({ input: ret.data });
-                showToast("ok");
+                showToast("OK", 700);
             }
         });
     },
@@ -58,7 +58,7 @@ Page({
             wx.setClipboardData({
                 data: data,
                 success() {
-                    showToast("OK", 700);
+                    showToast("Copy", 700);
                 },
                 fail() {
                     showToast("复制失败！");
@@ -124,7 +124,7 @@ function doEncipher(self, key) {
     let cipherInfo = {
         options: CIPHER_OPTION.ENCIPHER | CIPHER_OPTION.TEXT,
         group: key.group >> 3,
-        algorithm: ALGORITHMS.DC140713,
+        algorithm: ALGORITHMS.DEFAULT,
         level: key.level,
         key: key.data,
     };

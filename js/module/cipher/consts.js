@@ -1,7 +1,9 @@
 //@formatter:off
 
 export const ALGORITHMS = {
+	DEFAULT: 0,
 	DC140713: 1,
+	DC314: 2,
 };
 
 

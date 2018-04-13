@@ -12,7 +12,7 @@ export default class KeyBuilder {
 
     static make(option) {
         let level = option.level;
-        if (level === 0) {
+        if (!level) {
             option.level = level = levels[0].id;
         }
         let factory = map.get(level);

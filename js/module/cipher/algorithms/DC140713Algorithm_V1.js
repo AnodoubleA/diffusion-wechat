@@ -4,9 +4,9 @@ import {ALGORITHMS} from "../consts";
 export default class DC140713Algorithm extends AbstractAlgorithm {
 
 	enc(M, K) {
+		let BOX = this.BOX;
 		let R = this.R;
 		let N = this.N;
-		let BOX = this.BOX;
 		let x = 0, v = R, h = this.H - 1, X = this.H;
 		for (let i = 1; i <= R; i++) {
 			let U = K[i - 1];
@@ -42,9 +42,9 @@ export default class DC140713Algorithm extends AbstractAlgorithm {
 	}
 
 	dec(C, K) {
+		let BOX = this.BOX;
 		let R = this.R;
 		let N = this.N;
-		let BOX = this.BOX;
 		let x = 0, v = R - 1, h = this.H - 1;
 		for (let i = 0; i < R; i++ , v--) {
 			let V = K[i];

@@ -1,14 +1,13 @@
 import MixKey from "./MixKey";
 import {S1} from "./box";
 import {S2} from "./box";
-import {Levels} from "./levels";
 
 export default class StreamKey extends MixKey {
 	indices = null;
 
 	init(cipherInfo, algorithmInfo) {
 		super.init(cipherInfo, algorithmInfo);
-		this.init_key(cipherInfo.key, cipherInfo.keySize);
+		this.init_key(cipherInfo.key);
 		this.update_key();
 		this.update_key();
 	}
@@ -68,10 +67,6 @@ export default class StreamKey extends MixKey {
 		for (let i = 1; i <= this.R; i++) {
 			this.indices[i] = 1 << i - 1;
 		}
-	}
-
-	get level() {
-		return Levels.LEVEL_2;
 	}
 
 	get version() {
